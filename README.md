@@ -21,3 +21,12 @@
 -belongs_to: user, through: users
 -has_many: members
 -has_many: messages
+
+##messages table
+
+|Column|Type|Options|
+|------|----|-------|
+|body|text|null: false|
+|image|string|null: true|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
