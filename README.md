@@ -16,3 +16,8 @@
 |------|----|-------|
 |groupName|varchar|index: true, null: false, unique: true|
 |user_id|integer|null: false, foreign_key: true|
+
+### Association
+-belongs_to: user, through: users
+-has_many: members
+-has_many: messages
