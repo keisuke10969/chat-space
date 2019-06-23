@@ -18,11 +18,11 @@
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
--belongs_to: user, through: users
--has_many: members
--has_many: messages
+- belongs_to: user, through: users
+- has_many: members
+- has_many: messages
 
-##messages table
+## messages table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -30,3 +30,7 @@
 |image|string|null: true|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to: user
+- belongs_to: group
