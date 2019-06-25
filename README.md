@@ -15,7 +15,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
-|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to: user, through: users
