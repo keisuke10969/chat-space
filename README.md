@@ -17,7 +17,7 @@
 |name|string|index: true, null: false, unique: true|
 
 ### Association
-- belongs_to: user, through: users
+- belongs_to: users, through: members
 - has_many: members
 - has_many: messages
 
