@@ -14,7 +14,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|groupName|varchar|index: true, null: false, unique: true|
+|name|string|index: true, null: false, unique: true|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
