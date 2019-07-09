@@ -1,53 +1,65 @@
-<header>
-    <div class="header__top">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
+
+    <header>
         <p>グループを作成しました</p>
-    </div>
-    <div class="header__bottom">
-        <div class="header__left">
+    </header>
+    <div class=sidebar>
+        <div class="sidebar__top">
             <p>seo</p>
-            <div class="header__icon">
-            <a></a>
+            <div class="icon">
+                <a><i class="fas fa-edit edit"></i></a>
+                <a><i class="fas fa-cog cog"></i></a>
             </div>
         </div>
-        <div class="header__right">
-            <p>sample</p>
-            <p class="members">Members: seo neko</p>
+        <div class="sidebar__bottom">
+            <ul>
+                <li>
+                    <p class="sidebar__bottom__groupname">sample</p>
+                    <p class="sidebar__bottom__talk">こんにちは</p>
+                </li>
+                <li>
+                    <p class="sidebar__bottom__groupname">sample</p>
+                    <p class="sidebar__bottom__talk">こんにちは</p>
+                </li>
+            </ul>
         </div>
-        <a class="header__btn">edit</a>
     </div>
-</header>
-<div class="contents">
-    <div class="contents__leftbar">
-        <ul>
-            <li>
-                <p class="contents__left__groupname">sample</p>
-                <p class="contents__left__talk">こんにちは</p>
-            </li>
-            <li>
-                <p class="contents__left__groupname">sample</p>
-                <p class="contents__left__talk">こんにちは</p>
-            </li>
-        </ul>
+    <div class="talkspace">
+        <div class="talkspace__top">
+            <div class="talkspace__top__name">
+                <p>sample</p>
+                <p class="talkspace__top__name__members">Members: seo neko</p>
+            </div>
+            <div class="talkspace__top__edit">
+                <a class="talkspace__top__edit__btn">edit</a>
+            </div>
+        </div>
+        <div class="talkspace__middle">
+            <ul>
+                <li>
+                    <p class="talkspace__middle__username">test_user</p>
+                    <p class="talkspace__middle__time">2019/02/04(Mon) 17:00:01
+                    <p class="talkspace__middle__message"> こんにちは</p>
+                </li>
+                <li>
+                    <p class="talkspace__middle__username">test_user</p>
+                    <p class="talkspace__middle__time">2019/02/04(Mon) 17:00:01
+                    <p class="talkspace__middle__message"> こんにちは</p>
+                </li>
+            </ul>
+        </div>
+        <div class="talkspace__bottom">
+            <form class="talkspace__bottom__form">
+                <div class="talkspace__bottom__form__message">
+                    <input placeholder="type a message" type="text" class="talkspace__bottom__form__message__type">
+                    <label class="talkspace__bottom__message__form__photo">
+                    <i class="far fa-image photo"></i>
+                    <input type="file" name="datafile" id="filesend">
+                    </label>
+                </div>
+                    <input value="Send" type="submit" name="submit" id="submit-btn">
+            </form>
+        </div>
     </div>
-    </div>
-    <div class="contents__talkspace">
-        <ul class="contents__talkspace__talk">
-            <li>
-                <p class="contents__talkspace__username">test_user</p>
-                <p class="contents__talkspace__time">2019/02/04(Mon) 17:00:01
-                <p class="contents__talkspace__message"> こんにちは</p>
-            </li>
-            <li>
-                <p class="contents__talkspace__username">test_user</p>
-                <p class="contents__talkspace__time">2019/02/04(Mon) 17:00:01
-                <p class="contents__talkspace__message"> こんにちは</p>
-            </li>
-        </ul>
-    </div>
-    <div class="contents__bottom">
-    </div>
-</div>
-
-
-
-
