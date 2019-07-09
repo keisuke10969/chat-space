@@ -1,9 +1,9 @@
 @import 'variable';
 
-header{
+.header{
     height: 24px;
 }
-header p{
+.header p{
     background-color: $light-blue ; 
     text-align: center;
     color: $white;
