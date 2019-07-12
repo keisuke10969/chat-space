@@ -1,21 +1,18 @@
-.header
-  %p グループを作成しました
 .sidebar
-  .sidebar__top
-    %p seo
+  %p.sidebar__top
+    = current_user.name
     .icon
-      %a
+      = link_to new_group_path do
         %i.fa.fa-edit.edit
-      %a
+      = link_to edit_user_path(current_user) do
         %i.fa.fa-cog.cog
   .sidebar__bottom
-    %ul
-      %li
-        %p.sidebar__bottom__groupname sample
-        %p.sidebar__bottom__talk こんにちは
-      %li
-        %p.sidebar__bottom__groupname sample
-        %p.sidebar__bottom__talk こんにちは
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .sidebar__bottom__groupname
+          = group.name
+        .sidebar__bottom__talk 
+          メッセージはまだありません。
 .talkspace
   .talkspace__top
     .talkspace__top__name

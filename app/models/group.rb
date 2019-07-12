@@ -1,4 +1,4 @@
 class Group < ApplicationRecord
-    has_many: members
-    belongs_to: users, through: :members
+    has_many :members
+    has_many :users, through: :members
 end
