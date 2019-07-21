@@ -130,15 +130,16 @@
     color: $white;
 }
 
-input#submit-btn{
-    float: right;
+#submit-btn{
+    position: absolute;
+    bottom:0;
+    right:40px;
     background-color: $light-blue;
     height: 50px;
     line-height: 50px;
     color: $white;
     padding: 0 30px;
     width: 100px;
-    margin-left: 15px;
 }
 #filesend{
     display: none;
