@@ -5,4 +5,4 @@
 .talkspace__middle__message
     -if message.body.present?
         =message.body
-    =image tag message.image.url, class: "message__photo" if message.image.present?
+    =image_tag message.image.url, class: "message__photo" if message.image.present?
