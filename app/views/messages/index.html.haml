@@ -33,10 +33,11 @@
           2019/02/04(Mon) 17:00:01
         %p.talkspace__middle__message こんにちは
   .talkspace__bottom
-    %form.talkspace__bottom__form
-      .talkspace__bottom__form__message
-        %input.talkspace__bottom__form__message__type{placeholder: "type a message", type: "text"}/
-        %label.talkspace__bottom__message__form__photo
-          %i.fa.fa-image.photo
-          %input#filesend{name: "datafile", type: "file"}/
-      %input#submit-btn{name: "submit", type: "submit", value: "Send"}/
+    .form.talkspace__bottom__form
+      = form_for [@group, @message] do |f|
+        .talkspace__bottom__form__message
+          =f.text_field :body, class: 'talkspace__bottom__form__message__type', placeholder: "type a message"
+          =f.label :image, class:'talkspace__bottom__message__form__photo' do
+            = fa_icon 'picture-o', class: 'photo'
+            = f.file_send :image, id: 'filesend'
+          = f. submit 'Send', id: 'submit-btn'
