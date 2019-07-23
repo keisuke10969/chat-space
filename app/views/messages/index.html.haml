@@ -21,17 +21,7 @@
     .talkspace__top__edit
       %a.talkspace__top__edit__btn edit
   .talkspace__middle
-    %ul
-      %li
-        %p.talkspace__middle__username test_user
-        %p.talkspace__middle__time
-          2019/02/04(Mon) 17:00:01
-        %p.talkspace__middle__message こんにちは
-      %li
-        %p.talkspace__middle__username test_user
-        %p.talkspace__middle__time
-          2019/02/04(Mon) 17:00:01
-        %p.talkspace__middle__message こんにちは
+    = render @messages
   .talkspace__bottom
     .form.talkspace__bottom__form
       = form_for [@group, @message] do |f|
