@@ -12,7 +12,7 @@
         .sidebar__bottom__groupname
           = group.name
         .sidebar__bottom__talk 
-          メッセージはまだありません。
+          = group.show_last_message
 .talkspace
   .talkspace__top
     .talkspace__top__name
@@ -21,22 +21,13 @@
     .talkspace__top__edit
       %a.talkspace__top__edit__btn edit
   .talkspace__middle
-    %ul
-      %li
-        %p.talkspace__middle__username test_user
-        %p.talkspace__middle__time
-          2019/02/04(Mon) 17:00:01
-        %p.talkspace__middle__message こんにちは
-      %li
-        %p.talkspace__middle__username test_user
-        %p.talkspace__middle__time
-          2019/02/04(Mon) 17:00:01
-        %p.talkspace__middle__message こんにちは
+    = render @messages
   .talkspace__bottom
-    %form.talkspace__bottom__form
-      .talkspace__bottom__form__message
-        %input.talkspace__bottom__form__message__type{placeholder: "type a message", type: "text"}/
-        %label.talkspace__bottom__message__form__photo
-          %i.fa.fa-image.photo
-          %input#filesend{name: "datafile", type: "file"}/
-      %input#submit-btn{name: "submit", type: "submit", value: "Send"}/
+    .form.talkspace__bottom__form
+      = form_for [@group, @message] do |f|
+        .talkspace__bottom__form__message
+          =f.text_field :body, class: 'talkspace__bottom__form__message__type', placeholder: "type a message"
+          =f.label :image, class:'talkspace__bottom__message__form__photo' do
+            = fa_icon 'picture-o', class: 'photo'
+            = f.file_field :image, id: 'filesend'
+          = f. submit 'Send', id: 'submit-btn'
