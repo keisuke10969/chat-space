@@ -39,5 +39,5 @@
           =f.text_field :body, class: 'talkspace__bottom__form__message__type', placeholder: "type a message"
           =f.label :image, class:'talkspace__bottom__message__form__photo' do
             = fa_icon 'picture-o', class: 'photo'
-            = f.file_send :image, id: 'filesend'
+            = f.file_field :image, id: 'filesend'
           = f. submit 'Send', id: 'submit-btn'
