@@ -1,0 +1,8 @@
+.talkspace__middle__username 
+    = message.user.name
+.talkspace__middle__time
+    = message.created_at.strftime("%Y/%m/%d %H:%M")
+.talkspace__middle__message
+    - if message.body.present?
+        = message.body
+    = image_tag message.image.url, class: 'photo' if message.image.present?
