@@ -26,7 +26,7 @@
     .form.talkspace__bottom__form
       = form_for [@group, @message] do |f|
         .talkspace__bottom__form__message
-          =f.text_field :body, class: 'talkspace__bottom__form__message__type', placeholder: "type a message"
+          =f.text_field :body, class: 'talkspace__bottom__form__message__type', placeholder: "type a message",id:"new_message"
           =f.label :image, class:'talkspace__bottom__message__form__photo' do
             = fa_icon 'picture-o', class: 'photo'
             = f.file_field :image, id: 'filesend'
