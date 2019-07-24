@@ -8,8 +8,8 @@ $(function(){
     $("#new_message").on('submit', function(e){
       e.preventDefault();
       var formData = new FormData(this);
-      $('#submit-btn').removeAttr('data-disable-with')
-      var url = $(this).attr('action')
+      $('#submit-btn').removeAttr('data-disable-with');
+      var url = $(this).attr('action');
       $.ajax({
           url:  url,
           type: "POST",
@@ -21,9 +21,9 @@ $(function(){
       .done(function(data){
           var html = buildHTML(data);
           $('.talkspace__middle').append(html);
-          $('.talkspace__middle__message').val('');
-          $this.get(0).reset();
-          autoScroll();
+          $("#new_message")[0].reset();
+          $('.talkspace__middle').animate({scrollTop: $('.talkspace__middle')[0].scrollHeight}, 'fast');
+          
       })
       .fail(function(){
           alert('error');
