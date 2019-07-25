@@ -3,6 +3,7 @@ class Group < ApplicationRecord
     has_many :users, through: :members
     has_many :messages
 
+
     validates :name, presence: true
 
     def show_last_message
@@ -12,4 +13,5 @@ class Group < ApplicationRecord
           'まだメッセージはありません。'
         end
     end
+
 end

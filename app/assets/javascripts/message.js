@@ -1,8 +1,10 @@
 $(function(){
     function buildHTML(message){
+        image = ( message.image ) ? `<img class= "talkspace__bottom__message__form__photo" src=${message.image} >` : "";
         var html = `<p class="talkspace__middle__username"> ${message.name}</p>
                     <p class="talkspace__middle__time">${message.created_at}</p>
-                    <p class="talkspace__middle__message">${message.body}</p>`
+                    <p class="talkspace__middle__message">${message.body}</p>
+                    ${image}`
         return html;
     };
     $("#new_message").on('submit', function(e){
