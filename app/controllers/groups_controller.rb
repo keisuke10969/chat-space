@@ -9,7 +9,6 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
@@ -19,6 +18,7 @@ class GroupsController < ApplicationController
       render :edit
     end
   end
+
   def create
     @group = Group.new(group_params)
     @group.users << current_user
