@@ -6,6 +6,7 @@ class Api::MessagesController < ApplicationController
         respond_to do |format|
             format.html
             format.json { @messages = @messages.where("id > ?", params[:last_id]) }
+            binding.pry
         end
     end
   end
