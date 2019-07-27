@@ -48,14 +48,13 @@ $(function(){
             data.forEach(function(message){
             insertHTML = buildHTML(message);         
             $('.talkspace__middle').append(insertHTML);
-            ScrollToNewMessage();
             });
           })
         .done(function(messages) {
-          console.log('success');
+          alert('success');
         })
         .fail(function() {
-          console.log('error');
+          alert('error');
         });
         } else{
         setInterval(reloadMessages, 5000);
