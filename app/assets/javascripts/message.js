@@ -1,10 +1,12 @@
 $(function(){
     function buildHTML(message){
-        image = ( message.image ) ? `<img class= "talkspace__bottom__message__form__photo" src=${message.image} >` : "";
-        var html = `<p class="talkspace__middle__username"> ${message.name}</p>
+        var image = message.image ? `<img class= "photo" src= ${message.image.url} >` : "";
+        var html = `<div class="talkspace__middle-box" data-message-id="${message.id}">
+                    <p class="talkspace__middle__username"> ${message.user_name}</p>
                     <p class="talkspace__middle__time">${message.created_at}</p>
                     <p class="talkspace__middle__message">${message.body}</p>
-                    ${image}`
+                    ${image}
+                    </div>`
         return html;
     };
     $("#new_message").on('submit', function(e){
@@ -32,4 +34,30 @@ $(function(){
       });
       return false;
     });
+    var reloadMessages = function() {
+        if (window.location.href.match(/\/groups\/\d+\/messages/)){
+        last_message_id = $('.talkspace__middle:last').data('message-id');
+        $.ajax({
+          url: 'api/messages',
+          type: 'get',
+          dataType: 'json',
+          data: {id: last_message_id}
+        })
+        .done(function(data){
+            var insertHTML = '';
+            data.forEach(function(message){
+            insertHTML = buildHTML(message);         
+            $('.talkspace__middle').append(insertHTML);
+            });
+          })
+        .done(function(messages) {
+          alert('success');
+        })
+        .fail(function() {
+          alert('error');
+        });
+        } else{
+        setInterval(reloadMessages, 5000);
+        };
+    };
   });
