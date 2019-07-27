@@ -21,7 +21,8 @@
     .talkspace__top__edit
       %a.talkspace__top__edit__btn edit
   .talkspace__middle
-    = render @messages
+    .talkspace__middle-box
+      = render @messages
   .talkspace__bottom
     .form.talkspace__bottom__form
       = form_for [@group, @message] do |f|
